@@ -32,10 +32,16 @@ describe("Post a new Property", () => {
         cy.wait(500)
         cy.get('#name').type("Random test")
     })
-    
-    it('Should select a Properties type from list', () => {
+
+    it('Should select property types from the list.', () => {
+        // let propertyTypes = ["LOFT", "APARTMENT", "HOUSE"]
+        
         cy.get('.MuiSelect-root').click()
-            .select(0)
+        cy.get('[data-value="HOUSE"]').click()
+
+        // cy.get(`[data-value=${propertyTypes}]`).click()
+        // selects the whole properties types
+        // cy.get('.MuiPaper-root > .MuiList-root')
     })
 })
 
